@@ -17,11 +17,12 @@ container.innerHTML = randomNum
 
 setTimeout(function () {
     container.classList.add('gone');
-}, 5000);
+}, 30000);
+
+
 
 // let inputNum;
-// let correctNum = checkNum(inputNum, randomNum);+
-
+// let correctNum = checkNum(inputNum, randomNum)
 // function userNum () {
 //     for (let i = 0; i < 5; i++) {
 //         inputNum[i] = prompt('Write one by one the numbers you remember');
@@ -29,15 +30,12 @@ setTimeout(function () {
 // }
 
 // if (correctNum.length == 0) {
-//     alert('You have not entered a correct number');
-
-// }else if (correctNum.lenght == inputNum.lenght) {
-//     alert(`Congratulations! You guessed them all.`);
-
+//     alert('You have not entered a correct number')
+// }else if (correctNum.length == inputNum.length) {
+//     alert(`Congratulations! You guessed them all.`)
 // }else{
 //     alert(`You guessed ${correctNum.length} numbers`);
 // }
-
 
 // // check num
 // function checkNum(inputNum, randomNum) {
