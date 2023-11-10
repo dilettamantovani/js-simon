@@ -17,7 +17,7 @@ container.innerHTML = randomNum
 
 setTimeout(function () {
     container.classList.add('gone');
-}, 3000);
+}, 5000);
 
 // let inputNum;
 // let correctNum = checkNum(inputNum, randomNum);+
