@@ -10,7 +10,7 @@ let randomNum = [];
 
 
 for (let i = 0; i < 5; i++){
-    randomNum[i] = getRndInteger(100);
+    randomNum[i] = getRndInteger(1, 100);
 }
 
 container.innerHTML = randomNum
@@ -54,6 +54,6 @@ setTimeout(function () {
 
 
 // // random number generator
-// function getRndInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
