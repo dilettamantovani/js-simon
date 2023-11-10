@@ -20,6 +20,7 @@ setTimeout(function () {
 }, 30000);
 
 
+// da aggiungere un altro timeout per far comparire tutto ciò
 
 // let inputNum;
 // let correctNum = checkNum(inputNum, randomNum)
