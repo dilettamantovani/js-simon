@@ -17,43 +17,43 @@ container.innerHTML = randomNum
 
 setTimeout(function () {
     container.classList.add('gone');
-}, 30000);
+}, 3000);
 
-let inputNum;
-let correctNum = checkNum(inputNum, randomNum);+
+// let inputNum;
+// let correctNum = checkNum(inputNum, randomNum);+
 
-function userNum () {
-    for (let i = 0; i < 5; i++) {
-        inputNum[i] = prompt('Write one by one the numbers you remember');
-    }
-}
+// function userNum () {
+//     for (let i = 0; i < 5; i++) {
+//         inputNum[i] = prompt('Write one by one the numbers you remember');
+//     }
+// }
 
-if (correctNum.length == 0) {
-    alert('You have not entered a correct number');
+// if (correctNum.length == 0) {
+//     alert('You have not entered a correct number');
 
-}else if (correctNum.lenght == inputNum.lenght) {
-    alert(`Congratulations! You guessed them all.`);
+// }else if (correctNum.lenght == inputNum.lenght) {
+//     alert(`Congratulations! You guessed them all.`);
 
-}else{
-    alert(`You guessed ${correctNum.length} numbers`);
-}
-
-
-// check num
-function checkNum(inputNum, randomNum) {
-    let correctNum = [];
-    for (let i = 0; i < inputNum.length; i++) {
-        if (inputNum[i] == randomNum[i]) {
-            correctNum.push(i + 1);
-        }
-    }
-    return correctNum;
-}
+// }else{
+//     alert(`You guessed ${correctNum.length} numbers`);
+// }
 
 
+// // check num
+// function checkNum(inputNum, randomNum) {
+//     let correctNum = [];
+//     for (let i = 0; i < inputNum.length; i++) {
+//         if (inputNum[i] == randomNum[i]) {
+//             correctNum.push(i + 1);
+//         }
+//     }
+//     return correctNum;
+// }
 
 
-// random number generator
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
+
+// // random number generator
+// function getRndInteger(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
