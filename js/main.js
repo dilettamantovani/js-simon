@@ -4,55 +4,81 @@
 // 4. comparsa prompt inserimento numeri da parte dell'utente
 // 5. risposta software: quanti e quali numeri sono stati individuati
 
- 
-let container = document.getElementById('container');
-let randomNum = [];
+
+//numeri casuali
+const randomNum = getRandomNum(5, 1, 100);
 
 
-for (let i = 0; i < 5; i++){
-    randomNum[i] = getRndInteger(1, 100);
-}
+//chiamo array
+document.getElementById('container').innerHTML = randomNum.join(", ");
 
-container.innerHTML = randomNum
-
+//scomparsa numeri
 setTimeout(function () {
     container.classList.add('gone');
 }, 30000);
 
 
-// da aggiungere un altro timeout per far comparire tutto ciò
+//richiesta numeri
+setTimeout(function () {
+    let inputNum = getUserNum();
+    let correctNum = getCorrectNum(randomNum, inputNum)
+    alert(`You guessed ${correctNum.length} numbers`);
+    alert("The numbers you guessed are: " + correctNum.join(", ") + "." );
+ }, 32000);
 
-// let inputNum;
-// let correctNum = checkNum(inputNum, randomNum)
-// function userNum () {
-//     for (let i = 0; i < 5; i++) {
-//         inputNum[i] = prompt('Write one by one the numbers you remember');
-//     }
-// }
+//input utente = prompt + array push * 5
+function getUserNum() {
 
-// if (correctNum.length == 0) {
-//     alert('You have not entered a correct number')
-// }else if (correctNum.length == inputNum.length) {
-//     alert(`Congratulations! You guessed them all.`)
-// }else{
-//     alert(`You guessed ${correctNum.length} numbers`);
-// }
+    let result = [];
+    
+    while (result.length < 5) {
+        let newNum = parseInt(prompt('Enter a number: '));
+        
+        if(!result.includes(newNum)) {
+            result.push(newNum);
 
-// // check num
-// function checkNum(inputNum, randomNum) {
-//     let correctNum = [];
-//     for (let i = 0; i < inputNum.length; i++) {
-//         if (inputNum[i] == randomNum[i]) {
-//             correctNum.push(i + 1);
-//         }
-//     }
-//     return correctNum;
-// }
+        } else {
+            alert('You have already entered this number');
+        }
 
+    }
 
+    return result;
+
+}
+
+//controllo + restituzione
+function getCorrectNum(randomNum, inputNum) {
+
+    let result = [];
+
+    //controllo corrispondenza numero per numero
+    for (let i = 0; i < randomNum.length; i++) {
+        if (inputNum.includes(randomNum[i])) {
+            result.push(randomNum[i]);
+        }
+    }
+
+    return result;
+
+}
 
 
 // // random number generator
+function getRandomNum(num, min, max) {
+    let result = [];
+
+    while (result.length < num) {
+        const newNumber = getRndInteger(min, max);
+
+        if (!result.includes(newNumber)) {
+            result.push(newNumber);
+        }
+    }
+
+    return result;
+}
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
